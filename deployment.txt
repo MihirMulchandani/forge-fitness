@@ -1,0 +1,60 @@
+# Deployment Instructions for Forge Fitness
+
+This project is built with React, TypeScript, and Tailwind CSS (via CDN). It is designed to be deployed instantly to Vercel with zero configuration changes.
+
+## Prerequisites
+1. A GitHub account.
+2. A Vercel account (free).
+3. The project folder on your local machine.
+4. Ensure the logo file `ChatGPT_Image_Feb_8__2026__07_49_13_PM-removebg-preview.png` is in the root folder.
+
+## Step 1: Push to GitHub
+
+1.  Open your terminal in the project root directory.
+2.  Initialize a git repository:
+    ```bash
+    git init
+    ```
+3.  Add all files:
+    ```bash
+    git add .
+    ```
+4.  Commit the files:
+    ```bash
+    git commit -m "Initial commit for Forge Fitness"
+    ```
+5.  Go to GitHub.com and create a new public repository named `forge-fitness`.
+6.  Follow the GitHub instructions to push your local code:
+    ```bash
+    git branch -M main
+    git remote add origin https://github.com/<your-username>/forge-fitness.git
+    git push -u origin main
+    ```
+
+## Step 2: Deploy to Vercel
+
+1.  Go to [vercel.com](https://vercel.com) and log in.
+2.  Click **"Add New..."** -> **"Project"**.
+3.  Select your GitHub account and find the `forge-fitness` repository you just created.
+4.  Click **"Import"**.
+5.  **Build Configuration**:
+    *   **Framework Preset**: Create React App (should be detected automatically).
+    *   **Root Directory**: ./ (default).
+    *   **Build Command**: `npm run build` (default).
+    *   **Output Directory**: `build` (default).
+6.  Click **"Deploy"**.
+
+## Step 3: Verify
+
+1.  Wait for the deployment to finish (usually 1 minute).
+2.  Click on the generated domain (e.g., `forge-fitness.vercel.app`).
+3.  Check the following:
+    *   Does the Logo load?
+    *   Does the Navbar work?
+    *   Click "Contact" -> Does the Map load?
+    *   Test "Join via WhatsApp" button on mobile.
+
+## Troubleshooting
+
+*   **Logo not showing?** Ensure the filename is exactly `ChatGPT_Image_Feb_8__2026__07_49_13_PM-removebg-preview.png` and it is committed to GitHub in the root folder.
+*   **Routing 404s?** The app uses `HashRouter`, so refreshing pages should work fine on static hosting like Vercel.
